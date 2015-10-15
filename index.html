@@ -61,7 +61,8 @@ L.mapbox.map('map')
 
 // Since featureLayer is an asynchronous method, we use the `.on('ready'`
 // call to only use its marker data once we know it is actually loaded.
-L.mapbox.featureLayer.setGeoJSON(geojson), {
+L.mapbox.map('map', 'klenzer.nnbodpib')
+  .featureLayer.setGeoJSON(geojson);
     // The clusterGroup gets each marker in the group added to it
     // once loaded, and then is added to the map
     var clusterGroup = new L.MarkerClusterGroup();
