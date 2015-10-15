@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Markercluster with Mapbox marker data</title>
+<title>WLA Member Map</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
@@ -56,12 +56,12 @@ var geojson = [
 ];
 
 L.mapbox.map('map')
-    .setView([40.73, -74.011], 13)
+    .setView([35, -106], 4)
     .addLayer(L.mapbox.tileLayer('klenzer.nnbodpib'));
 
 // Since featureLayer is an asynchronous method, we use the `.on('ready'`
 // call to only use its marker data once we know it is actually loaded.
-L.mapbox.featureLayer.setGeoJSON(geojson).on('ready', function(e) {
+L.mapbox.featureLayer.setGeoJSON(geojson);
     // The clusterGroup gets each marker in the group added to it
     // once loaded, and then is added to the map
     var clusterGroup = new L.MarkerClusterGroup();
